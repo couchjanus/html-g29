@@ -12,15 +12,17 @@ html {
     /* font-family: 'Libre Franklin', sans-serif;
     font-family: 'Nunito', sans-serif; */
     font-family: 'Poppins', sans-serif;
-    font-size: 89%;
+    font-size: 70%;
 
     --main-color: #130f38;
+    --active-color: salmon;
     
 }
 
 body {
 
     margin: 0%;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6  {
@@ -42,11 +44,34 @@ section {
     padding: 5rem 9%;
 }
 
+.align-right {
+    text-align: right;
+}
+
+.page-header {
+    display: flex;
+    background-color: white;
+    padding: 2rem 9%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
 .page-header .brand {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bolder;
     color: var(--main-color);
 
+}
+
+.page-header .brand i{
+    color: var(--active-color);
 }
 
 .page-header .navbar {
@@ -54,8 +79,43 @@ section {
 }
 
 .page-header .navbar a{
-    
+    font-size: 1.7rem;
+    color: var(--main-color);
+    margin: 0 1rem;
 }
+
+.toolbar {
+    font-size: 2rem;
+}
+.toolbar a{
+    color: var(--main-color);
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .page-header .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background-color: white;
+
+    }
+
+    .page-header .navbar a{
+        display: block;
+        margin: 1.5rem;
+        font-size: 2rem;
+    }
+}
+
 
 .py-0 {
     padding-top: 0%;
@@ -117,11 +177,19 @@ section {
 
     margin-bottom: 1.5rem;
 }
-
-
 .mb-5 {
 
     margin-bottom: 3rem;
+}
+
+
+.mb-7 {
+
+    margin-bottom: 6rem;
+}
+
+.mt-5 {
+    margin-top: 3rem;
 }
 
 
@@ -135,7 +203,7 @@ section {
 
 
 .hero {
-
+    margin-top: 7rem;
 }
 
 .bg-cover {
@@ -146,10 +214,157 @@ section {
     background-position: center center !important;
 }
 
+.bg-fixed {
+    background-attachment: fixed !important;
+}
+
 .footer-link {
     color: white;
 }
 
 .list-unstyled {
     list-style: none;
+    padding: 0;
+}
+
+.bg-light {
+    background-color: beige;
+}
+
+.container {
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.row > * {
+    padding: 0 .5rem;
+    max-width: 100%;
+}
+
+/* media query */
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 560px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1208px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-auto {
+        width: auto;
+        flex: 0 0 auto;
+    }
+
+    .col-lg-1 {
+        width: calc(100%/12);
+        flex: 0 0 auto;
+    }
+
+    .col-lg-2 {
+        width: calc(200%/12);
+        flex: 0 0 auto;
+    }
+    .col-lg-3 {
+        width: calc(300%/12);
+        flex: 0 0 auto;
+    }
+
+    .col-lg-4 {
+        width: calc(100%/3);
+        flex: 0 0 auto;
+    }
+    .col-lg-5 {
+        width: calc(500%/12);
+        flex: 0 0 auto;
+    }
+
+    .col-lg-6 {
+        width: calc(100%/2);
+        flex: 0 0 auto;
+    }
+
+    .col-lg-7 {
+        width: calc(700%/12);
+        flex: 0 0 auto;
+    }
+    .col-lg-8 {
+        width: calc(800%/12);
+        flex: 0 0 auto;
+    }
+    .col-lg-9 {
+        width: calc(900%/12);
+        flex: 0 0 auto;
+    }
+    .col-lg-10 {
+        width: calc(1000%/12);
+        flex: 0 0 auto;
+    }
+    .col-lg-11 {
+        width: calc(1100%/12);
+        flex: 0 0 auto;
+    }
+    .col-lg-12 {
+        width: calc(1200%/12);
+        flex: 0 0 auto;
+    }
+}
+
+.border-top {
+    border-top: 2px solid #111;
+}
+
+/* product */
+
+.catalog .content {
+    text-align: center;
+    padding: .5rem 0;
+}
+
+.catalog h2 span {
+    color: var(--active-color);
+}
+
+.catalog .image {
+    height: 30rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.catalog .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
