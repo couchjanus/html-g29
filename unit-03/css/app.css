@@ -8,19 +8,15 @@
     box-sizing: border-box;
 }
 
-:root {
-
-    --main-color: #130f38;
-    --active-color: salmon;
-    
-}
-
 html {
     /* font-family: 'Libre Franklin', sans-serif;
     font-family: 'Nunito', sans-serif; */
     font-family: 'Poppins', sans-serif;
     font-size: 70%;
 
+    --main-color: #130f38;
+    --active-color: salmon;
+    
 }
 
 body {
@@ -67,22 +63,10 @@ section {
     z-index: 1000;
 }
 
-.page-header a {
-    color: var(--main-color);
-    text-decoration: none;
-}
-
-.page-header a:hover,
-.page-header a:focus,
-.page-header a:active {
-    color: var(--active-color);
-    text-decoration: underline;
-}
-
 .page-header .brand {
     font-size: 2rem;
     font-weight: bolder;
-    /* color: var(--main-color); */
+    color: var(--main-color);
 
 }
 
@@ -96,7 +80,7 @@ section {
 
 .page-header .navbar a{
     font-size: 1.7rem;
-    /* color: var(--main-color); */
+    color: var(--main-color);
     margin: 0 1rem;
 }
 
@@ -133,49 +117,6 @@ section {
 }
 
 
-.btn {
-    display: inline-block;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: darkgrey;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    cursor: pointer;
-    user-select: none;
-    background-color: transparent;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-}
-
-.btn-primary {
-    color: #fff;
-    background-color: var(--active-color);
-    border-color: var(--active-color);
-    border-radius: 5%;
-}
-
-.btn-primary:hover {
-    color: var(--active-color);
-    background-color: #fff;
-    border-color: var(--active-color);
-    font-weight: 700;
-}
-
-.btn-link {
-    color: #fff;
-    background-color: black;
-    border-color: black;
-    border-radius: 5%;
-}
-.btn-link:hover {
-    color: black;
-    background-color: #fff;
-    border-color: black;
-    border-radius: 5%;
-    font-weight: 700;
-}
-
 .py-0 {
     padding-top: 0%;
     padding-bottom: 0%;
@@ -196,11 +137,6 @@ section {
 .py-3 {
     padding-top: 1rem;
     padding-bottom: 1rem;
-}
-
-.px-3 {
-    padding-left: 1rem;
-    padding-right: 1rem;
 }
 
 
@@ -284,12 +220,6 @@ section {
 
 .footer-link {
     color: white;
-}
-
-.footer-link:hover, .footer-link:focus {
-    text-decoration: none;
-    padding-left: .6rem;
-    color: var(--active-color);
 }
 
 .list-unstyled {
@@ -437,122 +367,4 @@ section {
     height: 100%;
     width: 100%;
     object-fit: cover;
-}
-
-.catalog .price {
-    color: var(--active-color);
-    font-size: 2rem;
-}
-
-.product {
-    position: relative;
-}
-
-.catalog .product .icons {
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
-    z-index: 10;
-
-}
-
-.catalog .product .icons a{
-    display: block;
-    width: 5rem;
-    height: 5rem;
-    line-height: 5rem;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    background-color: white;
-    text-align: center;
-    color: var(--main-color);
-}
-
-.catalog .product .icons a:hover {
-    background-color: var(--active-color);
-    color: #fff;
-}
-
-ul.categories {
-    list-style: none;
-    padding: 0;
-}
-
-ul.categories a{
-    text-decoration: none;
-    color: var(--main-color);
-    font-size: 1.5rem;
-}
-
-ul.categories a:hover{
-    text-decoration: underline;
-    color: var(--active-color);
-}
-
-ul.categories li:nth-child(even) {
-    background-color: lightgray;
-}
-
-.breadcrumb {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-    list-style: none;
-}
-
-.breadcrumb-item {
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-    font-size: 1.7rem;
-}
-
-ol.breadcrumb li:nth-child(2) {
-    color: lightgrey !important;
-}
-
-.breadcrumb-item +.breadcrumb-item::before {
-    content: "/";
-    padding-right: .5rem;
-    float: left;
-}
-
-footer .list-unstyled li{
-    position: relative;
-}
-
-.footer-link::before {
-    content: '\f0da';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    display: inline-block;
-    position: absolute;
-    top:0%;
-    left:0;
-}
-
-.d-inline-block {
-    display: inline-block;
-}
-
-.d-flex {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.icon {
-
-}
-
-.cvg-icon {
-    width: 32px;
-    height: 32px;
-    vertical-align: text-bottom;
-    stroke: currentColor;
-    stroke-width: 3;
-}
-
-.cvg-icon:hover {
-    stroke: salmon;
-    stroke-width: 4;
 }
