@@ -113,6 +113,18 @@ aside {
     color: var(--main-color);
 }
 
+#toggler {
+    display: none;
+}
+.page-header label {
+    display: none;
+    font-size: 2rem;
+}
+
+.page-header label:hover {
+    color: var(--active-color);
+}
+/* clip-path */
 @media (max-width: 768px) {
     .page-header {
         display: flex;
@@ -121,14 +133,21 @@ aside {
         align-items: center;
         justify-content: space-between;
     }
-
+    .page-header label {
+        display: inline-block;
+    }
     .page-header .navbar {
         position: absolute;
         top: 99%;
         left: 0;
         right: 0;
         background-color: white;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 
+    }
+
+    #toggler:checked ~ nav.navbar {
+        clip-path: polygon(0 0, 100% 0,  100% 100%, 0 100%);
     }
 
     .page-header .navbar a{
@@ -457,6 +476,7 @@ aside {
 
 .product {
     position: relative;
+    overflow: hidden;
 }
 
 .catalog .product .icons {
@@ -464,8 +484,21 @@ aside {
     top: 1rem;
     right: 2rem;
     z-index: 10;
+    transform: translateX(10rem);
+    transition: .2s linear;
 
 }
+
+.catalog .product:hover .icons {
+    transform: translateX(0rem);
+    transition: .2s linear;
+}
+
+.catalog .product:hover .image img {
+    transform: scale(1.1);
+    filter: brightness(90%);
+}
+
 
 .catalog .product .icons a{
     display: block;
@@ -477,6 +510,7 @@ aside {
     background-color: white;
     text-align: center;
     color: var(--main-color);
+    transition: .2s linear;
 }
 
 .catalog .product .icons a:hover {
@@ -895,4 +929,86 @@ thead, tbody, tfoot, tr, td, th {
     left: 5%;
     width: 50%;
     background-color: #fff;
+}
+
+dialog::backdrop {
+    background: repeating-linear-gradient(
+        -180deg,
+        rgba(31, 21, 21, 0.2) 0,
+        rgba(0, 255, 0, .5) 10%,
+        rgba(0, 0, 255, .7) 50%,
+        rgba(255, 255, 0, .9) 100%
+
+    );
+}
+/* carousel */
+
+.carousel{
+
+    display: flex;
+    align-items: center;
+    background: #fff;
+    justify-content: center;
+
+}
+
+@keyframes carousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px*7));
+    }
+}
+
+.slider {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    height: 100px;
+    width: 960px;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+}
+
+.slider::after, .slider::before {
+    content: "";
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    z-index: 2;
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+.slide-track {
+    display: flex;
+    animation: carousel 40s linear infinite;
+    width:calc(250px*14)
+
+}
+
+.slide {
+    height: 100px;
+    width: 250px;
+}
+
+.slide img {
+    display: block;
+    height: 100px;
+    width: 250px;
+    object-fit: cover;
+}
+
+.carousel-item {
+
 }
